@@ -15,26 +15,6 @@ using Microsoft.Win32;
  * Remember to mark the resulting Resource file with the appropiate asset bundle
  *********************************************************
  */
-
- // in manifest:
- // <ResourceFile>resources.xml</ResourceFile>
- //
- // <?xml version="1.0"?>
- // <ResourceFile xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
- //     <Resources>
- //         <ResourceType>
- //             <Name>Power</Name>
- //             <Unit>kW</Unit>
- //             <ScheduleMode>Ticked</ScheduleMode>
- //         </ResourceType>
- //
- //         <ResourceType>
- //             <Name>Fuel</Name>
- //             <Unit>L</Unit>
- //             <ScheduleMode>Ticked</ScheduleMode>
- //         </ResourceType>
- //     </Resources>
- // </ResourceFile>
 public class ResourceBuilderWin : EditorWindow
 {
   // TODO: read files OR save config
@@ -48,7 +28,7 @@ public class ResourceBuilderWin : EditorWindow
   private GUIContent minusTooltip = new GUIContent("-", "Remove this resource definition");
 
   static private List<ShipResource> resources = new List<ShipResource>();
-  [MenuItem("Tools/Build Resources file %b")]
+  [MenuItem("Tools/Build Resources file %r")]
   static void Init() {
     ResourceBuilderWin window = (ResourceBuilderWin) EditorWindow.GetWindow(typeof(ResourceBuilderWin));
     window.Show();
